@@ -1,0 +1,17 @@
+saltpad:
+  version: 0.2
+  apiurl: "localhost:5417"
+  secure: "false"
+  templates:
+    basic:
+      - description: Basic template
+      - matcher: glob
+      - target: "*"
+      - moduleFunction: test.fib
+      - arguments:
+        - num: 10
+    version:
+      - description: Basic version
+      - matcher: glob
+      - target: "*"
+      - moduleFunction: test.version
