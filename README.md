@@ -17,3 +17,7 @@ The following options are required on pillar's master:
           - .*
           - '@runner'
           - '@wheel
+
+It is possile to install the salt-api as well as waiting for the salt-formula configuration with the option install_dependency: true.
+
+Otherwise call the saltdap/dependency directly on the remote master (as well as with the salt-formula with the previous examples).

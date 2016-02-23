@@ -2,6 +2,7 @@ saltpad:
   version: 0.2
   apiurl: "localhost:5417"
   secure: "false"
+  install_dependency: false
   templates:
     basic:
       - description: Basic template

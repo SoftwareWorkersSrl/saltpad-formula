@@ -1,7 +1,6 @@
-saltpad-dependency:
-  pkg.installed:
-    - pkgs:
-      - salt-api
+{% if  salt['pillar.get']('saltpad.install_dependency',false) %}
+include .dependency
+{% endif %}
 
 saltpad-install:
   git.latest:
