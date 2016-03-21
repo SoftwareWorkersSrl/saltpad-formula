@@ -10,7 +10,7 @@ saltpad:
       target: "*"
       moduleFunction: test.fib
       arguments:
-        - num: 10
+        num: 10
     version:
       description: Basic version
       matcher: glob
