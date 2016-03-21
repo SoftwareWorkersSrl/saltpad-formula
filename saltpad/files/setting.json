@@ -1,16 +1,16 @@
 {% set cfg = pillar.get('saltpad', {}) -%}
 {
-    "API_URL": "{{ cfg.apiurl }}",
-    "SECURE_HTTP": {{ cfg.secure }},
+    "API_URL": "{{ cfg['apiurl'] }}",
+    "SECURE_HTTP": {{ cfg['secure'] }},
     "templates": {
 {% for tmpl in salt['pillar.get']('saltpad:templates', {}) %}
         "{{ tmpl }}": {
-            "description": "{{ tmpl[description] }}",
-            "matcher": "{{ tmpl[matcher] }}",
-            "target": "{{ tmpl[target] }}",
-            "moduleFunction": "{{ tmpl[moduleFunction] }}",
+            "description": "{{ tmpl['description'] }}",
+            "matcher": "{{ tmpl['matcher'] }}",
+            "target": "{{ tmpl['target'] }}",
+            "moduleFunction": "{{ tmpl['moduleFunction'] }}",
             "arguments": {
-{%          for param, option in tmpl[arguments] -%}
+{%          for param, option in tmpl['arguments'] -%}
                 {{ param }}: {{ option }}
 {%          endfor -%}
             }
