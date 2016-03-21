@@ -9,11 +9,13 @@
             "matcher": "{{ cfg['templates'][tmpl]['matcher'] }}",
             "target": "{{ cfg['templates'][tmpl]['target'] }}",
             "moduleFunction": "{{ cfg['templates'][tmpl]['moduleFunction'] }}",
+{%	    if cfg['templates'][tmpl]['arguments']|defined %}
             "arguments": {
-{%          for param, option in cfg['templates'][tmpl]['arguments'] -%}
-                {{ param }}: {{ option }}
-{%          endfor -%}
+{%              for param in cfg['templates'][tmpl]['arguments'] -%}
+                {{ param }}: {{ cfg['templates'][tmpl]['arguments'][param] }}
+{%              endfor -%}
             }
+{%          endif %}
         }{% if not loop.last %},{% endif %}
 {% endfor %}
     }
