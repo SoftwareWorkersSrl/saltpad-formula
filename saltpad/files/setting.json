@@ -9,7 +9,7 @@
             "matcher": "{{ cfg['templates'][tmpl]['matcher'] }}",
             "target": "{{ cfg['templates'][tmpl]['target'] }}",
             "moduleFunction": "{{ cfg['templates'][tmpl]['moduleFunction'] }}",
-{%	    if cfg['templates'][tmpl]['arguments']|defined %}
+{%	    if cfg['templates'][tmpl]['arguments'] is defined %}
             "arguments": {
 {%              for param in cfg['templates'][tmpl]['arguments'] -%}
                 {{ param }}: {{ cfg['templates'][tmpl]['arguments'][param] }}
